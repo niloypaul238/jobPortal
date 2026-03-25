@@ -7,11 +7,11 @@ const Context = ({children}) => {
     const [allJobs,setAllJobs] = useState([])
     const [saveJobsList,setSaveJobsList] = useState([])
     const [follow,setFollow] = useState(false)
-    useEffect(()=>{
-         fetch('http://localhost:5001/jobs')
-        .then(res => res.json())
-        .then(data => setAllJobs(data))
-    },[])
+    // useEffect(()=>{
+    //      fetch('http://localhost:5001/jobs')
+    //     .then(res => res.json())
+    //     .then(data => setAllJobs(data))
+    // },[])
     return (
         <CreateContextExport.Provider value={{allJobs,setAllJobs,saveJobsList,setSaveJobsList,follow,setFollow}}>
             {children}

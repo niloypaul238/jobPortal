@@ -7,15 +7,15 @@ const Category = () => {
     const [cate, setCate] = useState([])
 
 
-    useEffect(() => {
-        const solvedData = async () => {
-            const fetchData = await fetch('http://localhost:5001/jobs')
-            const data = await fetchData.json()
-            setAllData(data);
-        }
-        solvedData()
+    // useEffect(() => {
+    //     const solvedData = async () => {
+    //         const fetchData = await fetch('http://localhost:5001/jobs')
+    //         const data = await fetchData.json()
+    //         setAllData(data);
+    //     }
+    //     solvedData()
 
-    }, [])
+    // }, [])
 
 // console.log(allData);
     allData?.map(item => {
