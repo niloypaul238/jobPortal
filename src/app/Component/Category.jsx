@@ -9,7 +9,7 @@ const Category = () => {
 
     useEffect(() => {
         const solvedData = async () => {
-            const fetchData = await fetch('http://localhost:5001/jobs')
+            const fetchData = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/jobs")
             const data = await fetchData.json()
             setAllData(data);
         }
