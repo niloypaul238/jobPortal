@@ -8,7 +8,7 @@ const Context = ({children}) => {
     const [saveJobsList,setSaveJobsList] = useState([])
     const [follow,setFollow] = useState(false)
     useEffect(()=>{
-         fetch(process.env.NEXT_PUBLIC_API_URL + "/api/jobs")
+         fetch("http://localhost:5001/jobs")
         .then(res => res.json())
         .then(data => setAllJobs(data))
     },[])

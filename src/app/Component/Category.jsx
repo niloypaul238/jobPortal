@@ -5,19 +5,32 @@ import React, { useEffect, useState } from 'react';
 const Category = () => {
     const [allData, setAllData] = useState([])
     const [cate, setCate] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [err, setErr] = useState(null)
+
+
+    const dataFetch = async () => {
+        setLoading(true)
+
+        try {
+            await new Promise((resolve) => setTimeout(resolve, 5000));
+            const fetchData =await fetch('http://localhost:5001/jobs')
+            const data =await fetchData.json()
+            setAllData(data);
+
+        } catch (error) {
+            setErr(error.message)
+        } finally {
+            setLoading(false)
+        }
+    }
 
 
     useEffect(() => {
-        const solvedData = async () => {
-            const fetchData = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/jobs")
-            const data = await fetchData.json()
-            setAllData(data);
-        }
-        solvedData()
-
+        dataFetch()
     }, [])
 
-// console.log(allData);
+    // console.log(allData);
     allData?.map(item => {
         if (!cate.includes(item.jobCategory)) {
             setCate([...cate, item.jobCategory])
@@ -25,6 +38,13 @@ const Category = () => {
     })
 
 
+    if (loading) {
+        return <p>Loading....</p>
+    }
+
+    if (err) {
+        return <p>error {err}</p>
+    }
 
 
     // // console.log(allData);
@@ -40,7 +60,7 @@ const Category = () => {
                 <div className='grid grid-cols-1 md:grid-cols-4 gap-3 mt-6'>
                     {
                         cate?.map(item => {
-                            return(
+                            return (
                                 <Link href={"/jobs"} key={item} className='bg-gray-100 text-center p-2 text-gray-700 hover:bg-green-500 hover:text-white transition-all duration-500'>{item}</Link>
                             )
                         })

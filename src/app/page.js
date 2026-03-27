@@ -7,10 +7,11 @@ import Work from "./Component/Work";
 import { blogs } from "../../public/blogs";
 import Link from "next/link";
 import BlogCard from "./Component/BlogCard";
+import Footer from "./Component/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Navbar />
       <Hero />
       <Category />
@@ -60,7 +61,8 @@ export default function Home() {
         </div>
 
       </div>
+      <Footer/>
 
-    </main>
+    </>
   );
 }
