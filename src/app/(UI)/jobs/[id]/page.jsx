@@ -6,7 +6,7 @@ import React from 'react';
 
 const JobDetails = async ({ params }) => {
     const { id } = await params;
-    const fetchData = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/jobs")
+    const fetchData = await fetch('http://localhost:5001/jobs')
     const data = await fetchData.json()
     const filterData = data.filter(item => item.id == id)
     const { applicants, applicationEnd, applied, categoryId, companyId, companyLogo, companyName, description, experience, featured, gender, jobCategory
