@@ -9,6 +9,7 @@ import Link from "next/link";
 import BlogCard from "./Component/BlogCard";
 import Footer from "./Component/Footer";
 
+
 export default function Home() {
   return (
     <>

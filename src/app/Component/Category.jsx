@@ -13,9 +13,10 @@ const Category = () => {
         setLoading(true)
 
         try {
-            await new Promise((resolve) => setTimeout(resolve, 5000));
-            const fetchData =await fetch('http://localhost:5001/jobs')
-            const data =await fetchData.json()
+           
+            const fetchData = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/jobs`,
+                { cache: "no-store" })
+            const data = await fetchData.json()
             setAllData(data);
 
         } catch (error) {
