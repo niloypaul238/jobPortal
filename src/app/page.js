@@ -24,7 +24,7 @@ export default function Home() {
           <p className="text-sm text-gray-600">Many desktop publishing packages and web page editors</p>
         </div>
 
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {
             blogs.slice(0, 1).map(blog => <BlogCard key={blog.id} blog={blog}/>)
           }
