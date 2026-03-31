@@ -8,9 +8,9 @@ const Context = ({children}) => {
     const [saveJobsList,setSaveJobsList] = useState([])
     const [follow,setFollow] = useState(false)
     useEffect(()=>{
-         fetch("http://localhost:5001/jobs")
+         fetch("/api.json")
         .then(res => res.json())
-        .then(data => setAllJobs(data))
+        .then(data => setAllJobs(data.jobs))
     },[])
     return (
         <CreateContextExport.Provider value={{allJobs,setAllJobs,saveJobsList,setSaveJobsList,follow,setFollow}}>

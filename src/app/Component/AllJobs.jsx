@@ -59,7 +59,7 @@ const AllJobs = () => {
                             ))}
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

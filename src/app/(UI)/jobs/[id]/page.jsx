@@ -1,14 +1,17 @@
+"use client"
 import SaveBtn from '@/app/Component/SaveBtn';
+import { CreateContextExport } from '@/app/Context/Context';
 import { FacebookIcon, Heart, Instagram, Linkedin, MapPin, MoveRight, Phone, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { useParams } from 'next/navigation';
+import React, { useContext } from 'react';
 
-const JobDetails = async ({ params }) => {
-    const { id } = await params;
-    const fetchData = await fetch('http://localhost:5001/jobs')
-    const data = await fetchData.json()
-    const filterData = data.filter(item => item.id == id)
+const JobDetails =  ({ params }) => {
+    const { id } =  useParams();
+    const {allJobs,setAllJobs} = useContext(CreateContextExport)
+    const filterData = allJobs?.filter(item => item.id == id)
+    console.log(filterData);
     const { applicants, applicationEnd, applied, categoryId, companyId, companyLogo, companyName, description, experience, featured, gender, jobCategory
         , location,
         posted,
@@ -17,7 +20,7 @@ const JobDetails = async ({ params }) => {
         skills,
         title,
         mobileNumber,
-        type } = filterData[0]
+        type } = filterData[0];
 
         
     return (
@@ -91,7 +94,7 @@ const JobDetails = async ({ params }) => {
                                     <li>✔ Having approved theme/s on ThemeForest will be given high preference.</li>
                                     <li>✔ Strong knowledge of WordPress Theme Standards</li>
                                     <li>✔ Ability to convert HTML templates into full WordPress themes</li>
-                                    <li>✔ Good knowledge in {skills.join(', ')}</li>
+                                    <li>✔ Good knowledge in </li>
                                 </ul>
                             </div>
                             {/* Description */}

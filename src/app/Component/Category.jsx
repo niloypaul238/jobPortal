@@ -5,46 +5,21 @@ import React, { useEffect, useState } from 'react';
 const Category = () => {
     const [allData, setAllData] = useState([])
     const [cate, setCate] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [err, setErr] = useState(null)
 
-
-    const dataFetch = async () => {
-        setLoading(true)
-
-        try {
-            await new Promise((resolve) => setTimeout(resolve, 5000));
-            const fetchData =await fetch('http://localhost:5001/jobs')
-            const data =await fetchData.json()
-            setAllData(data);
-
-        } catch (error) {
-            setErr(error.message)
-        } finally {
-            setLoading(false)
-        }
-    }
 
 
     useEffect(() => {
-        dataFetch()
+         fetch('/api.json').then(res => res.json()).then(data =>setAllData(data.jobs))
     }, [])
 
     // console.log(allData);
-    allData?.map(item => {
+    allData.map(item => {
         if (!cate.includes(item.jobCategory)) {
             setCate([...cate, item.jobCategory])
         }
     })
 
 
-    if (loading) {
-        return <p>Loading....</p>
-    }
-
-    if (err) {
-        return <p>error {err}</p>
-    }
 
 
     // // console.log(allData);

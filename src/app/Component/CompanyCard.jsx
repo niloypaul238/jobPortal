@@ -12,9 +12,9 @@ export default function CompanyCard({ company }) {
                         <div className="relative overflow-hidden">
                             <Image
                                 src={company.logo}
-                                width={20}
-                                height={20}
-                                className="object-cover h-20 w-20 rounded-full "
+                                width={120}
+                                height={120}
+                                className="object-cover  rounded-full "
                                 quality={100}
                                 alt={"logo"}
                             />

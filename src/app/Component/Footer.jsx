@@ -11,7 +11,7 @@ const Footer = () => {
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                         <div>
                             <div className="flex justify-center text-teal-300 sm:justify-start">
-                               <Image className='rounded-full' height={40} width={40} alt='logo' src={'/original-8939a7332eb5bdc39b71ea43d0b14965.webp'} />
+                                <Image className='rounded-full' height={40} width={40} alt='logo' src={'/original-8939a7332eb5bdc39b71ea43d0b14965.webp'} />
                             </div>
 
                             <p
@@ -22,7 +22,7 @@ const Footer = () => {
                             </p>
 
                             <ul className="flex justify-center gap-6 mt-8 md:gap-8 sm:justify-start">
-                               
+
                             </ul>
                         </div>
 
@@ -142,7 +142,7 @@ const Footer = () => {
                                             className="flex items-center justify-center sm:justify-start gap-1.5 group"
                                             href="/contact"
                                         >
-                                            <Mail size={20} className='text-white'  />
+                                            <Mail size={20} className='text-white' />
 
                                             <span className="text-white transition group-hover:text-white/75">
                                                 resume@doe.com
@@ -155,7 +155,7 @@ const Footer = () => {
                                             className="flex items-center justify-center sm:justify-start gap-1.5 group"
                                             href="/"
                                         >
-                                           <Phone size={20} className='text-white'  />
+                                            <Phone size={20} className='text-white' />
 
                                             <span className="text-white transition group-hover:text-white/75">
                                                 0123456789
@@ -166,10 +166,10 @@ const Footer = () => {
                                     <li
                                         className="flex items-start justify-center gap-1.5 sm:justify-start"
                                     >
-                                       <MapPin size={30} className='text-white' />
+                                        <MapPin size={30} className='text-white' />
 
                                         <address className="-mt-0.5 not-italic text-white">
-                                           23 Floor, Dhaka, Bangladesh
+                                            23 Floor, Dhaka, Bangladesh
                                         </address>
                                     </li>
                                 </ul>
@@ -177,33 +177,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="pt-6 mt-12 border-t border-gray-800">
-                        <div className="text-center sm:flex sm:justify-between sm:text-left">
-                            <p className="text-sm text-gray-400">
-                                <span className="block sm:inline">All rights reserved.</span>
-
-                                <Link
-                                    className="inline-block text-teal-500 underline transition hover:text-teal-500/75"
-                                    href="/"
-                                >
-                                    Terms & Conditions
-                                </Link>
-
-                                <span>&middot;</span>
-
-                                <Link
-                                    className="inline-block text-teal-500 underline transition hover:text-teal-500/75"
-                                    href="/"
-                                >
-                                    Privacy Policy
-                                </Link>
-                            </p>
-
-                            <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
-                                &copy; 2022 Company Name
-                            </p>
-                        </div>
-                    </div>
+                   
                 </div>
             </footer>
         </div>
